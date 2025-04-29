@@ -16,7 +16,7 @@ TWITTER_API_URL = "https://api.twitter.com/2/tweets"
 MAX_TWEET_LENGTH = 280
 POSTED_ARTICLES_FILE = "posted_articles.json"
 ARTICLES_TO_TRACK = 20
-ENABLE_URL_SHORTENING = os.getenv('ENABLE_URL_SHORTENING', 'false').lower() == 'true'
+ENABLE_URL_SHORTENING = False  # Completely disabled
 
 def debug_print(message):
     """Helper function for debug output"""
@@ -84,7 +84,7 @@ def get_articles():
         return []
 
 def get_article_content(url):
-    """Scrape the content of an article"""
+    """Scrape the content of an article from georgia-news-japan.online"""
     try:
         debug_print(f"Fetching article content from: {url}")
         response = requests.get(url, timeout=15)
@@ -95,34 +95,73 @@ def get_article_content(url):
 
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Look for the main content - adjust selectors based on the website structure
-        content_selectors = [
-            'article',
-            '.post-content',
-            '.entry-content',
-            '.content',
-            'main'
-        ]
+        # Save HTML for debugging
+        with open("debug_article_raw.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
 
-        content = None
-        for selector in content_selectors:
-            content_element = soup.select_one(selector)
-            if content_element:
-                content = content_element.get_text(strip=True)
-                break
+        # Based on the website structure, the article content is in a div with class "prose prose-gray max-w-none"
+        # This is specific to georgia-news-japan.online
+        content_div = soup.select_one('.prose.prose-gray.max-w-none')
 
-        if not content:
-            # Fallback: try to get all paragraphs
-            paragraphs = soup.find_all('p')
+        if content_div:
+            # Get all paragraphs from the content div
+            paragraphs = content_div.find_all('p')
             if paragraphs:
-                content = ' '.join([p.get_text(strip=True) for p in paragraphs])
+                # Extract text from each paragraph
+                paragraph_texts = [p.get_text(strip=True) for p in paragraphs]
+                # Filter out empty paragraphs
+                paragraph_texts = [p for p in paragraph_texts if p]
 
-        if content:
-            debug_print(f"Successfully extracted content ({len(content)} chars)")
-            return content
-        else:
-            debug_print("Could not extract article content")
-            return None
+                if paragraph_texts:
+                    # Join paragraphs with newlines for better readability
+                    content = '\n'.join(paragraph_texts)
+                    debug_print(f"Found {len(paragraph_texts)} paragraphs in article content")
+                    return content
+
+        # Fallback: Try to find the article element and extract all text
+        article_element = soup.select_one('article')
+        if article_element:
+            # Get all paragraphs from the article
+            paragraphs = article_element.find_all('p')
+            if paragraphs:
+                paragraph_texts = [p.get_text(strip=True) for p in paragraphs]
+                paragraph_texts = [p for p in paragraph_texts if p]
+
+                if paragraph_texts:
+                    content = '\n'.join(paragraph_texts)
+                    debug_print(f"Fallback: Found {len(paragraph_texts)} paragraphs in article element")
+                    return content
+
+        # Second fallback: Try to find any div with class containing "content"
+        content_divs = soup.select('[class*="content"]')
+        for div in content_divs:
+            paragraphs = div.find_all('p')
+            if paragraphs and len(paragraphs) >= 2:  # At least 2 paragraphs to be considered content
+                paragraph_texts = [p.get_text(strip=True) for p in paragraphs]
+                paragraph_texts = [p for p in paragraph_texts if p and len(p) > 20]  # Only substantial paragraphs
+
+                if paragraph_texts:
+                    content = '\n'.join(paragraph_texts)
+                    debug_print(f"Second fallback: Found {len(paragraph_texts)} paragraphs in content div")
+                    return content
+
+        # Last resort: Just get all paragraphs from the page
+        all_paragraphs = soup.find_all('p')
+        if all_paragraphs:
+            paragraph_texts = [p.get_text(strip=True) for p in all_paragraphs]
+            paragraph_texts = [p for p in paragraph_texts if p and len(p) > 30]  # Only substantial paragraphs
+
+            if paragraph_texts:
+                content = '\n'.join(paragraph_texts)
+                debug_print(f"Last resort: Found {len(paragraph_texts)} paragraphs on page")
+                return content
+
+        debug_print("Could not extract article content using any method")
+        # Save HTML for debugging
+        with open("debug_article.html", "w", encoding="utf-8") as f:
+            f.write(response.text)
+        debug_print("Saved article HTML to debug_article.html for inspection")
+        return None
 
     except Exception as e:
         debug_print(f"Error fetching article content: {str(e)}")
@@ -131,25 +170,110 @@ def get_article_content(url):
 def generate_summary_from_content(title, content=None):
     """Generate a summary without using external APIs"""
     try:
-        # Simple rule-based summarization
-        if not content:
-            return f"【ジョージア最新情報】{title}"
+        debug_print(f"Generating summary from content (length: {len(content) if content else 0})")
 
-        # Extract first sentence or first 100 characters
+        # If no content or very short content, just use the title with a period
+        if not content or len(content) < 20:
+            debug_print("Content too short, using title")
+            # Add a period if the title doesn't end with one
+            if not title.endswith('。') and not title.endswith('.'):
+                return f"{title}。"
+            return title
+
+        # Extract complete sentences from the content
         content = content.strip()
-        first_sentence_end = content.find('。')
 
-        # Just use the title with a prefix for now
-        # In a future version, we could use the extracted content
-        # if first_sentence_end > 10 and first_sentence_end < 100:
-        #     extracted_text = content[:first_sentence_end+1]
-        # else:
-        #     extracted_text = content[:100] + "..."
+        # Split content into paragraphs if it contains newlines
+        paragraphs = content.split('\n')
+        paragraphs = [p.strip() for p in paragraphs if p.strip()]
 
-        return f"【ジョージア最新情報】{title}"
+        # Get the first few paragraphs to work with
+        working_paragraphs = []
+        total_length = 0
+        for p in paragraphs:
+            if total_length < 500:  # Get enough content to work with
+                working_paragraphs.append(p)
+                total_length += len(p)
+            else:
+                break
+
+        if not working_paragraphs:
+            debug_print("No valid paragraphs found, using title")
+            if not title.endswith('。') and not title.endswith('.'):
+                return f"{title}。"
+            return title
+
+        # Join the working paragraphs
+        working_text = ' '.join(working_paragraphs)
+        debug_print(f"Working with text: {working_text[:100]}...")
+
+        # Find complete sentences
+        sentences = []
+        start = 0
+
+        # Extract sentences until we have enough for a good summary
+        while start < len(working_text) and len(''.join(sentences)) < 200:
+            # Find the next sentence end (Japanese period)
+            jp_end = working_text.find('。', start)
+            # Find the next western period
+            en_end = working_text.find('.', start)
+
+            # Determine which end to use
+            if jp_end != -1 and (en_end == -1 or jp_end < en_end):
+                next_end = jp_end
+            elif en_end != -1:
+                next_end = en_end
+            else:
+                # No more sentence endings
+                break
+
+            # Extract the sentence (including the period)
+            sentence = working_text[start:next_end+1]
+
+            if len(sentence) > 10:  # Only add if it's a substantial sentence
+                sentences.append(sentence)
+
+            # Move to the next sentence
+            start = next_end + 1
+
+        if sentences:
+            # Join the sentences into a summary
+            summary = ''.join(sentences)
+
+            # Ensure it's not too long (max 200 chars)
+            if len(summary) > 200:
+                # Find the last complete sentence that fits
+                last_jp_period = summary[:200].rfind('。')
+                last_en_period = summary[:200].rfind('.')
+                last_period = max(last_jp_period, last_en_period)
+
+                if last_period > 0:
+                    summary = summary[:last_period+1]
+                else:
+                    # If no complete sentence fits, just use the first sentence
+                    if len(sentences) > 0:
+                        summary = sentences[0]
+                    else:
+                        # Last resort: use the title with a period
+                        if not title.endswith('。') and not title.endswith('.'):
+                            summary = f"{title}。"
+                        else:
+                            summary = title
+
+            debug_print(f"Generated summary: {summary}")
+            return summary
+        else:
+            # If no complete sentences found, use the title with a period
+            debug_print("No complete sentences found, using title")
+            if not title.endswith('。') and not title.endswith('.'):
+                return f"{title}。"
+            return title
     except Exception as e:
         debug_print(f"Local summarization error: {str(e)}")
-        return f"【ジョージア最新情報】{title}"
+        # Return title with a period
+        if not title.endswith('。') and not title.endswith('.'):
+            return f"{title}。"
+        return title
 
 def summarize_article(title, url):
     """Generate summary using OpenRouter API with article content, with fallback"""
@@ -173,9 +297,26 @@ def summarize_article(title, url):
 
         # Use content if available, otherwise just use the title
         if content:
-            prompt = f"この記事を簡潔に要約してください (200文字以内)。ツイッター投稿用です。丁寧語で、ハッシュタグは無しで。\n\nタイトル: {title}\n\n内容: {content[:2000]}"
+            prompt = f"""この記事を簡潔に要約してください。以下の条件を守ってください：
+1. 200文字以内で完結させる
+2. 必ず完全な文で終わらせる（文の途中で切れないこと）
+3. 「最新」や「【ジョージア最新情報】」などの接頭辞は付けない
+4. 丁寧語を使用する
+5. ハッシュタグは使用しない
+6. 記事の主要な情報を含める
+
+タイトル: {title}
+
+内容: {content[:2000]}"""
         else:
-            prompt = f"この記事を簡潔に要約してください (200文字以内)。ツイッター投稿用です。\n\nタイトル: {title}"
+            prompt = f"""この記事のタイトルから内容を推測して要約してください。以下の条件を守ってください：
+1. 200文字以内で完結させる
+2. 必ず完全な文で終わらせる（文の途中で切れないこと）
+3. 「最新」や「【ジョージア最新情報】」などの接頭辞は付けない
+4. 丁寧語を使用する
+5. ハッシュタグは使用しない
+
+タイトル: {title}"""
 
         payload = {
             "model": "meta-llama/llama-4-maverick:free",
@@ -206,7 +347,7 @@ def summarize_article(title, url):
     except Exception as e:
         debug_print(f"Summarization error: {str(e)}")
 
-    return f"【ジョージア最新情報】{title}"
+    return f"{title}"
 
 def post_to_twitter(text):
     """Post to Twitter using API v2"""
@@ -281,7 +422,9 @@ def shorten_url(url):
         return url
 
 def main():
+    debug_print("=" * 50)
     debug_print("Starting Georgia News Bot...")
+    debug_print("=" * 50)
 
     # Verify environment variables
     required_vars = ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_SECRET']
@@ -295,6 +438,9 @@ def main():
         debug_print("OpenRouter API key not found, will use local summarization")
     else:
         debug_print("OpenRouter API key found, will use AI summarization")
+
+    debug_print("URL shortening is " + ("enabled" if ENABLE_URL_SHORTENING else "disabled"))
+    debug_print("-" * 50)
 
     # Load previously posted articles
     posted_data = load_posted_articles()
@@ -334,26 +480,54 @@ def main():
         debug_print("No suitable article found to post.")
         return
 
+    debug_print("-" * 50)
     debug_print(f"Selected article: {selected_article['title']}")
+    debug_print(f"URL: {selected_article['url']}")
 
     # Generate summary
+    debug_print("Generating summary...")
     summary = summarize_article(selected_article['title'], selected_article['url'])
+    debug_print(f"Generated summary: {summary}")
 
-    # Try to shorten the URL, but make it optional
-    try:
-        short_url = shorten_url(selected_article['url'])
-    except Exception as e:
-        debug_print(f"URL shortening completely failed: {str(e)}")
-        short_url = selected_article['url']
+    # Use the original URL directly
+    article_url = selected_article['url']
+    debug_print(f"Using URL: {article_url}")
+
+    # For Twitter, we need to make sure the URL is shortened
+    # Twitter t.co shortener will make all URLs 23 characters
+    TWITTER_URL_LENGTH = 23
+
+    # Calculate the maximum length for the summary
+    # 280 (max tweet) - 23 (shortened URL) - 2 (newlines) = 255
+    max_summary_length = MAX_TWEET_LENGTH - TWITTER_URL_LENGTH - 2
+
+    # If summary is too long, truncate it to a complete sentence
+    if len(summary) > max_summary_length:
+        debug_print(f"Summary too long ({len(summary)} chars), truncating to {max_summary_length} chars")
+
+        # Find the last complete sentence that fits
+        truncated_summary = summary[:max_summary_length]
+
+        # Look for Japanese period
+        last_jp_period = truncated_summary.rfind('。')
+        # Look for Western period
+        last_en_period = truncated_summary.rfind('.')
+
+        # Use the latest period found
+        last_period = max(last_jp_period, last_en_period)
+
+        if last_period > 0:
+            # Use the complete sentence
+            summary = summary[:last_period+1]
+            debug_print(f"Truncated to last sentence end at position {last_period}")
+        else:
+            # If no period found, just truncate without ellipsis
+            summary = truncated_summary
+            debug_print("No sentence end found, truncated without ellipsis")
 
     # Prepare tweet text
-    tweet_text = f"{summary}\n\n{short_url}"
-
-    # Ensure tweet is within character limit
-    if len(tweet_text) > MAX_TWEET_LENGTH:
-        available_chars = MAX_TWEET_LENGTH - len(short_url) - 5  # 5 for "\n\n" and some buffer
-        summary = summary[:available_chars] + "..."
-        tweet_text = f"{summary}\n\n{short_url}"
+    tweet_text = f"{summary}\n\n{article_url}"
+    debug_print("-" * 50)
 
     debug_print("Final tweet content:")
     debug_print(tweet_text)
