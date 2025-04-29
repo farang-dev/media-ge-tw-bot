@@ -275,6 +275,21 @@ def generate_summary_from_content(title, content=None):
             return f"{title}。"
         return title
 
+def remove_prefixes(text):
+    """Remove common prefixes from the summary"""
+    prefixes = [
+        "最新: ", "最新：", "最新 ", "最新",
+        "【ジョージア最新情報】", "【最新情報】", "【速報】",
+        "ジョージア最新: ", "ジョージア: ", "ジョージア："
+    ]
+
+    for prefix in prefixes:
+        if text.startswith(prefix):
+            debug_print(f"Removing prefix: '{prefix}'")
+            return text[len(prefix):]
+
+    return text
+
 def summarize_article(title, url):
     """Generate summary using OpenRouter API with article content, with fallback"""
     try:
@@ -286,7 +301,8 @@ def summarize_article(title, url):
         # Check if OpenRouter API key is available
         if not os.getenv('OPENROUTER_API_KEY'):
             debug_print("No OpenRouter API key found, using local summarization")
-            return generate_summary_from_content(title, content)
+            summary = generate_summary_from_content(title, content)
+            return remove_prefixes(summary)
 
         headers = {
             "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
@@ -300,10 +316,11 @@ def summarize_article(title, url):
             prompt = f"""この記事を簡潔に要約してください。以下の条件を守ってください：
 1. 200文字以内で完結させる
 2. 必ず完全な文で終わらせる（文の途中で切れないこと）
-3. 「最新」や「【ジョージア最新情報】」などの接頭辞は付けない
+3. 「最新」や「【ジョージア最新情報】」などの接頭辞は絶対に付けないでください
 4. ニュース口調、トーンで書く
 5. ハッシュタグは使用しない
 6. 記事の主要な情報を含める
+7. 要約は「ジョージア」または記事の主題から始めてください
 
 タイトル: {title}
 
@@ -312,9 +329,10 @@ def summarize_article(title, url):
             prompt = f"""この記事のタイトルから内容を推測して要約してください。以下の条件を守ってください：
 1. 200文字以内で完結させる
 2. 必ず完全な文で終わらせる（文の途中で切れないこと）
-3. 「最新」や「【ジョージア最新情報】」などの接頭辞は付けない
+3. 「最新」や「【ジョージア最新情報】」などの接頭辞は絶対に付けないでください
 4. ニュース口調、トーンで書く
 5. ハッシュタグは使用しない
+6. 要約は「ジョージア」または記事の主題から始めてください
 
 タイトル: {title}"""
 
@@ -334,7 +352,11 @@ def summarize_article(title, url):
             debug_print(f"OpenRouter response: {data}")
 
             if 'choices' in data and data['choices']:
-                return data['choices'][0]['message']['content']
+                summary = data['choices'][0]['message']['content']
+                # Remove any prefixes that might have been added despite instructions
+                summary = remove_prefixes(summary)
+                debug_print(f"API summary after prefix removal: {summary}")
+                return summary
         except requests.exceptions.HTTPError as e:
             debug_print(f"OpenRouter HTTP Error: {e.response.status_code} - {e.response.text}")
             return generate_summary_from_content(title, content)
@@ -487,7 +509,10 @@ def main():
     # Generate summary
     debug_print("Generating summary...")
     summary = summarize_article(selected_article['title'], selected_article['url'])
-    debug_print(f"Generated summary: {summary}")
+
+    # Double-check for any prefixes that might have slipped through
+    summary = remove_prefixes(summary)
+    debug_print(f"Final summary after prefix removal: {summary}")
 
     # Use the original URL directly
     article_url = selected_article['url']
