@@ -16,6 +16,7 @@ TWITTER_API_URL = "https://api.twitter.com/2/tweets"
 MAX_TWEET_LENGTH = 280
 POSTED_ARTICLES_FILE = "posted_articles.json"
 ARTICLES_TO_TRACK = 20
+ENABLE_URL_SHORTENING = os.getenv('ENABLE_URL_SHORTENING', 'false').lower() == 'true'
 
 def debug_print(message):
     """Helper function for debug output"""
@@ -127,13 +128,41 @@ def get_article_content(url):
         debug_print(f"Error fetching article content: {str(e)}")
         return None
 
+def generate_summary_from_content(title, content=None):
+    """Generate a summary without using external APIs"""
+    try:
+        # Simple rule-based summarization
+        if not content:
+            return f"【ジョージア最新情報】{title}"
+
+        # Extract first sentence or first 100 characters
+        content = content.strip()
+        first_sentence_end = content.find('。')
+
+        # Just use the title with a prefix for now
+        # In a future version, we could use the extracted content
+        # if first_sentence_end > 10 and first_sentence_end < 100:
+        #     extracted_text = content[:first_sentence_end+1]
+        # else:
+        #     extracted_text = content[:100] + "..."
+
+        return f"【ジョージア最新情報】{title}"
+    except Exception as e:
+        debug_print(f"Local summarization error: {str(e)}")
+        return f"【ジョージア最新情報】{title}"
+
 def summarize_article(title, url):
-    """Generate summary using OpenRouter API with article content"""
+    """Generate summary using OpenRouter API with article content, with fallback"""
     try:
         debug_print(f"Summarizing article: {title[:50]}...")
 
         # Get the article content
         content = get_article_content(url)
+
+        # Check if OpenRouter API key is available
+        if not os.getenv('OPENROUTER_API_KEY'):
+            debug_print("No OpenRouter API key found, using local summarization")
+            return generate_summary_from_content(title, content)
 
         headers = {
             "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
@@ -156,23 +185,28 @@ def summarize_article(title, url):
             }]
         }
 
-        response = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=30)
-        response.raise_for_status()
+        try:
+            response = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=30)
+            response.raise_for_status()
 
-        data = response.json()
-        debug_print(f"OpenRouter response: {data}")
+            data = response.json()
+            debug_print(f"OpenRouter response: {data}")
 
-        if 'choices' in data and data['choices']:
-            return data['choices'][0]['message']['content']
+            if 'choices' in data and data['choices']:
+                return data['choices'][0]['message']['content']
+        except requests.exceptions.HTTPError as e:
+            debug_print(f"OpenRouter HTTP Error: {e.response.status_code} - {e.response.text}")
+            return generate_summary_from_content(title, content)
+        except Exception as e:
+            debug_print(f"OpenRouter API error: {str(e)}")
+            return generate_summary_from_content(title, content)
 
-        return f"最新: {title}"
+        return generate_summary_from_content(title, content)
 
-    except requests.exceptions.HTTPError as e:
-        debug_print(f"OpenRouter HTTP Error: {e.response.status_code} - {e.response.text}")
     except Exception as e:
         debug_print(f"Summarization error: {str(e)}")
 
-    return f" {title}"
+    return f"【ジョージア最新情報】{title}"
 
 def post_to_twitter(text):
     """Post to Twitter using API v2"""
@@ -209,6 +243,11 @@ def post_to_twitter(text):
 
 def shorten_url(url):
     """Shorten a URL using shrtco.de API with fallback to tinyurl"""
+    # Skip URL shortening if disabled
+    if not ENABLE_URL_SHORTENING:
+        debug_print("URL shortening is disabled")
+        return url
+
     try:
         debug_print(f"Shortening URL: {url}")
         # Try shrtco.de first
@@ -245,13 +284,17 @@ def main():
     debug_print("Starting Georgia News Bot...")
 
     # Verify environment variables
-    required_vars = ['OPENROUTER_API_KEY', 'X_API_KEY',
-                    'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_SECRET']
+    required_vars = ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_SECRET']
 
     missing_vars = [var for var in required_vars if not os.getenv(var)]
     if missing_vars:
-        debug_print(f"Missing environment variables: {', '.join(missing_vars)}")
+        debug_print(f"Missing required environment variables: {', '.join(missing_vars)}")
         return
+
+    if not os.getenv('OPENROUTER_API_KEY'):
+        debug_print("OpenRouter API key not found, will use local summarization")
+    else:
+        debug_print("OpenRouter API key found, will use AI summarization")
 
     # Load previously posted articles
     posted_data = load_posted_articles()
@@ -296,8 +339,12 @@ def main():
     # Generate summary
     summary = summarize_article(selected_article['title'], selected_article['url'])
 
-    # Try to shorten the URL
-    short_url = shorten_url(selected_article['url'])
+    # Try to shorten the URL, but make it optional
+    try:
+        short_url = shorten_url(selected_article['url'])
+    except Exception as e:
+        debug_print(f"URL shortening completely failed: {str(e)}")
+        short_url = selected_article['url']
 
     # Prepare tweet text
     tweet_text = f"{summary}\n\n{short_url}"
