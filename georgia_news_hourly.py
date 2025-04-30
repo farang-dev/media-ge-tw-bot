@@ -1,6 +1,7 @@
 import os
 import requests
 import json
+import time
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from requests_oauthlib import OAuth1
@@ -39,6 +40,22 @@ def load_posted_articles():
                     return json.load(f)
             except Exception as e:
                 debug_print(f"Error loading from temporary file: {str(e)}")
+
+        # If running in GitHub Actions, create a file in the workspace to persist between runs
+        if os.environ.get('GITHUB_ACTIONS'):
+            debug_print("Running in GitHub Actions, creating persistent record")
+            # Create a basic record with the current date to avoid reposting
+            persistent_record = {
+                "posted": [],
+                "last_posted_url": None,
+                "last_run_date": time.strftime("%Y-%m-%d")
+            }
+            try:
+                with open(POSTED_ARTICLES_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(persistent_record, f, ensure_ascii=False, indent=2)
+                return persistent_record
+            except Exception as e:
+                debug_print(f"Error creating persistent record: {str(e)}")
 
         # If neither file exists, return an empty record
         return {"posted": [], "last_posted_url": None}
@@ -462,6 +479,29 @@ def main():
     debug_print("URL shortening is " + ("enabled" if ENABLE_URL_SHORTENING else "disabled"))
     debug_print("-" * 50)
 
+    # Check if we've already posted today (for GitHub Actions to avoid too frequent posts)
+    if os.environ.get('GITHUB_ACTIONS'):
+        # Load posted articles to check last run date
+        posted_data = load_posted_articles()
+        current_date = time.strftime("%Y-%m-%d")
+
+        # If we have a last run date and it's today, check the hour
+        if 'last_run_date' in posted_data and posted_data['last_run_date'] == current_date:
+            # Get current hour
+            current_hour = int(time.strftime("%H"))
+
+            # If we have a last run hour and it's within 1 hour, skip this run
+            if 'last_run_hour' in posted_data:
+                last_hour = int(posted_data['last_run_hour'])
+                if abs(current_hour - last_hour) < 1:
+                    debug_print(f"Already posted within the last hour (last: {last_hour}, current: {current_hour}). Skipping.")
+                    return
+
+        # Update the last run date and hour
+        posted_data['last_run_date'] = current_date
+        posted_data['last_run_hour'] = time.strftime("%H")
+        save_posted_articles(posted_data)
+
     # Load previously posted articles
     posted_data = load_posted_articles()
 
@@ -474,7 +514,31 @@ def main():
     # Filter out articles that have already been posted
     new_articles = []
     for article in articles:
-        if article['url'] not in posted_data['posted']:
+        # Check if the URL has been posted before
+        if article['url'] in posted_data['posted']:
+            debug_print(f"Skipping already posted article: {article['title'][:30]}...")
+            continue
+
+        # Check for similar titles to avoid posting about the same topic
+        title_words = set(article['title'].split())
+        is_similar = False
+
+        # Check against the last 5 posted articles for similarity
+        for posted_url in posted_data['posted'][-5:]:
+            # Find the matching article from the current list
+            for a in articles:
+                if a['url'] == posted_url:
+                    posted_title_words = set(a['title'].split())
+                    # If more than 60% of words match, consider it similar
+                    common_words = title_words.intersection(posted_title_words)
+                    if len(common_words) > 0.6 * min(len(title_words), len(posted_title_words)):
+                        debug_print(f"Skipping similar article: {article['title'][:30]}...")
+                        is_similar = True
+                        break
+            if is_similar:
+                break
+
+        if not is_similar:
             new_articles.append(article)
 
     if not new_articles:
