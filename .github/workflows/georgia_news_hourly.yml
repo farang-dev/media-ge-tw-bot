@@ -23,11 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 python-dotenv requests-oauthlib
 
-      - name: Run news bot
+      - name: Run news bot (strict version)
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-        run: python georgia_news_hourly.py
+        run: python georgia_news_strict.py
