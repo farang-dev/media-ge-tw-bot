@@ -229,7 +229,7 @@ def generate_ai_summary(title, content, max_length=150):
         
         # Calculate how many characters we can use for the URL and spacing
         url_buffer = 30  # Twitter t.co shortener + newlines
-        available_chars = MAX_TWEET_LENGTH - url_buffer
+        available_chars = MAX_TWEET_LENGTH 
         
         # Use content if available, otherwise just use the title
         if content:
