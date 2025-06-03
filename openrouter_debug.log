@@ -1,0 +1,973 @@
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Found article content: 857 chars
+[DEBUG] Article content length: 857 chars
+[DEBUG] Generating tweet with OpenRouter LLM API
+[DEBUG] Prompt for OpenRouter API:
+あなたはジョージア（グルジア）に関するニュースをツイートする専門家です。
+以下の記事タイトルと内容を元に、魅力的で情報価値の高いツイートを作成してください。
+
+記事タイトル: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+
+記事内容:
+2024年5月30日、ジョージア（グルジア）の首都ティビリシ（Tbilisi）市裁判所は、野党連合「変化のための連合」の指導者で「新党（アハリ）」共同党首のニカ・メリア（Nika Melia）氏に対し、仮拘束を命じる決定を下しました。直接の理由は、与党「ジョージアの夢」が主導する議会の「暫定調査委員会」への出頭命令に従わず、保釈金の支払いを拒否したことです。
+メリア氏に先立ち、5月22日には「変化のための連合」と「自由党-より多くの自由を（ギルチ）」の指導者ズラブ・ジャパリゼ（Zurab Japaridze）氏が同様の理由で仮収監されました。また5月14日には元国防相のイラクリ・オクルアシュヴィリ（Irakli Okruashvili）氏も保釈金未納を理由に拘束されています。当局は今後、同じく保釈金支払いを拒否している野党「新党」の別の指導者ニカ・グラミア（Nika Gvaramia）氏に対しても同様の措置を取るとみられています。
+野党側は「ジョージアの夢」が議会で単独過半数を握る現状を「一党支配」と非難。2023年可決された新選挙法に基づく2024年10月26日実施予定の総選挙について「非民主的」と主張し、その正当性を認めていません。与党主導の調査委員会への協力を拒否する姿勢を貫いており、政治的な対立が司法手続きに波及する事態が続いています。
+米欧諸国からは「政権による反体制派への圧力強化」との批判の声が継続。2023年にEU（欧州連合）から「加盟候補国」の地位を得たジョージア政府ですが、民主的基準を巡る懸念から正式加盟への道筋は不透明さを増しています。首都ティビリシでは5月、ロシアとの関係強化に反対する大規模デモが発生するなど、市民の政治意識が高まっている状況です。
+今回の一連の司法判断を巡り、政権与党は「法の支配に基づく対応」と主張する一方、野党関係者や人権団体は「政敵を司法で弾圧する手段」と強く批判。2024年総選挙を前に、ジョージア政界の緊張がさらに高まることが予想されます。  # 長すぎる場合は適切に切り詰める
+
+以下の条件を満たすツイートを作成してください：
+1. 260文字以内であること（URLの長さを考慮）
+2. 記事のURLは自動的に追加されるので含めないこと
+3. 記事の重要なポイントを簡潔に伝えること
+4. 魅力的で、読者の興味を引く表現を使うこと
+5. 文章が途中で切れていないこと（必ず文末で終わること）
+6. 日本語で書くこと
+7. 「詳細はこちら」などの表現は不要です
+8. 記事の背景情報や重要な詳細も含めてください
+9. 政治的な記事の場合は、関係者の立場や対立点を明確にしてください
+
+ツイートのみを出力してください。説明や前置きは不要です。
+[DEBUG] Calling OpenRouter API (attempt 1/3)...
+[DEBUG] OpenRouter API response: {
+  "id": "gen-1748963101-sMpwtOsMmRud1LxUwBfj",
+  "provider": "Meta",
+  "model": "meta-llama/llama-3.3-8b-instruct:free",
+  "object": "chat.completion",
+  "created": 1748963102,
+  "choices": [
+    {
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、保釈金拒否で政治緊張が高まりました。与党「ジョージアの夢」が議会で単独過半数を握ることが「一党支配」である野党側の主張は、米欧諸国からも批判の声が続いています。2024年総選挙を前に政界の緊張が高まることに注目です。",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1015,
+    "completion_tokens": 115,
+    "total_tokens": 1130
+  }
+}
+[DEBUG] Raw tweet from LLM: ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、保釈金拒否で政治緊張が高まりました。与党「ジョージアの夢」が議会で単独過半数を握ることが「一党支配」である野党側の主張は、米欧諸国からも批判の声が続いています。2024年総選挙を前に政界の緊張が高まることに注目です。
+[DEBUG] Final tweet: ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、…
+
+https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 273 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、…
+
+https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 273 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、…
+
+https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 273 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニカ・メリア氏が仮拘束処分を受け、…
+
+https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%ad%a6%e7%94%9f2%e4%ba%ba%e3%81%8c%e8%ad%b0%e5%93%a1%e4%be%ae%e8%be%b1%e3%81%a712%e6%97%a5%e6%8b%98%e7%a6%81-%e5%8f%8d%e3%83%ad%e3%82%b7%e3%82%a2
+[DEBUG] Found article content: 969 chars
+[DEBUG] Article content length: 969 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する260文字以内（URLを含めない場合）の魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端
+記事内容: ジョージア（グルジア）の首都トビリシ（Tbilisi）市裁判所は5月30日、与党「ジョージアの夢」のマリアム・ラシュヒ（Mariam Lashkhi）議員への侮辱容疑で、学生活動家のリカ・ロルトキパニゼ（Lika Lortkipanidze）さん（22）とタティア・アフリアマシュヴィリ（Tatia Afriamashvili）さん（20）に対し、12日間の拘禁刑を言い渡しました。未成年の子を持つ活動家マグダ・マムカシュヴィリ（Magda Mamukashvili）さんには4000ラリ（約20万8,000円）の罰金が科せられました。
+この事件は5月17日、ラシュヒ議員が子どもとカフェにいた際、3人の女性活動家が抗議行動を起こしたことが発端です。活動家らはロシア批判を叫び、「自由を奪われた人々を解放せよ」「ロシア式体制に反対」などのスローガンを掲げました。ジョージアでは2023年5月、与党が推進した「外国影響力透明化法」改正案撤回を求める大規模デモが発生し、現在も反ロシア感情を背景とした抗議活動が続いています。
+「公務員に対する侮辱行為」として内務省が事件を受理。2月に成立した改正行政法（公務員侮辱罪）に基づき、45日間の拘禁を求める訴追が行われました
+判決を受け、トビリシ国立大学（Ilia State University）の学生たちは即座に抗議行動を開始。大学から国会議事堂までデモ行進を行い、拘禁処分の不当性を訴えました。判決を受けた学生2人が同大学に在籍していることも判明し、支援者らは6月2日から授業ボイコットを計画しています。
+同日、別の抗議活動参加者の兄トルニケ・スヴィタリゼ（Tornike Svhitaridze）さんも警察官への侮辱で5日間の拘禁刑を受け、アニ・カフタラゼ（Ani Kavtaradze）さんには5000ラリ（約26万円）の罰金が科されました。市民団体「シヴィル・ジー」は「政府が言論弾圧を強化している」と指摘し、国際人権団体が事態を注視しています。
+2023年2月に成立した行政法改正では、公務員への侮辱が重大な行政違反と位置付けられており、今回の判決は同法適用の先例となりました。与党は「公務の尊厳を守るため必要」と主張する一方、野党は「政権批判封じ込めの手段」と強く非難しています。
+
+要件:
+- 260文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 270 characters
+[DEBUG] Full tweet content:
+ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%ad%a6%e7%94%9f2%e4%ba%ba%e3%81%8c%e8%ad%b0%e5%93%a1%e4%be%ae%e8%be%b1%e3%81%a712%e6%97%a5%e6%8b%98%e7%a6%81-%e5%8f%8d%e3%83%ad%e3%82%b7%e3%82%a2
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 270 characters
+[DEBUG] Full tweet content:
+ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%ad%a6%e7%94%9f2%e4%ba%ba%e3%81%8c%e8%ad%b0%e5%93%a1%e4%be%ae%e8%be%b1%e3%81%a712%e6%97%a5%e6%8b%98%e7%a6%81-%e5%8f%8d%e3%83%ad%e3%82%b7%e3%82%a2
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 270 characters
+[DEBUG] Full tweet content:
+ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%ad%a6%e7%94%9f2%e4%ba%ba%e3%81%8c%e8%ad%b0%e5%93%a1%e4%be%ae%e8%be%b1%e3%81%a712%e6%97%a5%e6%8b%98%e7%a6%81-%e5%8f%8d%e3%83%ad%e3%82%b7%e3%82%a2
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア学生2人が議員侮辱で12日拘禁 反ロシア抗議が発端
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Found article content: 857 chars
+[DEBUG] Article content length: 857 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+記事内容: 2024年5月30日、ジョージア（グルジア）の首都ティビリシ（Tbilisi）市裁判所は、野党連合「変化のための連合」の指導者で「新党（アハリ）」共同党首のニカ・メリア（Nika Melia）氏に対し、仮拘束を命じる決定を下しました。直接の理由は、与党「ジョージアの夢」が主導する議会の「暫定調査委員会」への出頭命令に従わず、保釈金の支払いを拒否したことです。
+メリア氏に先立ち、5月22日には「変化のための連合」と「自由党-より多くの自由を（ギルチ）」の指導者ズラブ・ジャパリゼ（Zurab Japaridze）氏が同様の理由で仮収監されました。また5月14日には元国防相のイラクリ・オクルアシュヴィリ（Irakli Okruashvili）氏も保釈金未納を理由に拘束されています。当局は今後、同じく保釈金支払いを拒否している野党「新党」の別の指導者ニカ・グラミア（Nika Gvaramia）氏に対しても同様の措置を取るとみられています。
+野党側は「ジョージアの夢」が議会で単独過半数を握る現状を「一党支配」と非難。2023年可決された新選挙法に基づく2024年10月26日実施予定の総選挙について「非民主的」と主張し、その正当性を認めていません。与党主導の調査委員会への協力を拒否する姿勢を貫いており、政治的な対立が司法手続きに波及する事態が続いています。
+米欧諸国からは「政権による反体制派への圧力強化」との批判の声が継続。2023年にEU（欧州連合）から「加盟候補国」の地位を得たジョージア政府ですが、民主的基準を巡る懸念から正式加盟への道筋は不透明さを増しています。首都ティビリシでは5月、ロシアとの関係強化に反対する大規模デモが発生するなど、市民の政治意識が高まっている状況です。
+今回の一連の司法判断を巡り、政権与党は「法の支配に基づく対応」と主張する一方、野党関係者や人権団体は「政敵を司法で弾圧する手段」と強く批判。2024年総選挙を前に、ジョージア政界の緊張がさらに高まることが予想されます。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%a4%96%e5%9b%bd%e4%bb%a3%e7%90%86%e4%ba%ba%e6%b3%95%e3%81%abeu%e3%81%8c%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e4%b8%bb%e7%be%a9%e5%be%8c%e9%80%80
+[DEBUG] Found article content: 894 chars
+[DEBUG] Article content length: 894 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘
+記事内容: 5月31日に施行されたジョージア（Georgia）の外国影響力透明化法（Foreign Agents Registration Act: FARA）に対し、欧州連合（EU）のトップが厳しい批判を表明した。EU外務・安全保障政策上級代表のカイア・カラス（Kaja Kallas）氏と欧州委員会のマルタ・コス（Marta Koos）拡大担当委員は共同声明で「この法律は民主主義への重大な逆行であり、EU加盟への道程をさらに遠のかせる」と警告した。
+EU側は同時に「政府が民主主義を前進させる具体的な措置を取れば、加盟交渉再開を検討する用意がある」と述べ、サロメ・ズラビシュヴィリ（Salome Zourabichvili）大統領の拒否権を無視して成立させた現政権に再考を促した。現在のEU加盟候補国中、ジョージアだけが正式交渉開始の前提となる改革要件を満たしていない状況が続いている。
+FARA法への非難はEUだけにとどまらない。スウェーデンとノルウェーの外務省に加え、エストニアのマルグス・ツァフクナ（Margus Tsahkna）外相やラトビアのバイバ・ブラージェ（Baiba Braže）外相も「基本的人権の侵害」「市民社会の抑圧」「EU統合への希望阻害」と糾弾した。
+同法は海外資金を受けるNGOやメディアに「外国代理人」登録を義務付ける内容で、政府は「国家主権の保護」を主張する。しかし欧米諸国はロシアの「外国代理人法」との類似性を指摘し、ジョージア・ドリーム党政権の親ロシア姿勢を危惧している。首都トビリシ（Tbilisi）では法律に抗議する大規模デモが2カ月以上継続中だ。
+国際人権団体は「登録義務が言論の自由を萎縮させる」と危機感を強める。実際にジョージア公共放送（GPB）など政府系メディアが批判報道を控える動きも出ており、欧州委員会は今後14日以内に人権侵害の具体的な事例報告書をまとめる予定だ。
+EUの圧力にもかかわらず、与党は10月議会選挙を前に法施行を推進する構え。民主化を求める市民と親露政策を進める政府の対立が激化する中、ジョージアの政治的岐路が注目されている。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 271 characters
+[DEBUG] Full tweet content:
+ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%a4%96%e5%9b%bd%e4%bb%a3%e7%90%86%e4%ba%ba%e6%b3%95%e3%81%abeu%e3%81%8c%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e4%b8%bb%e7%be%a9%e5%be%8c%e9%80%80
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 271 characters
+[DEBUG] Full tweet content:
+ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%a4%96%e5%9b%bd%e4%bb%a3%e7%90%86%e4%ba%ba%e6%b3%95%e3%81%abeu%e3%81%8c%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e4%b8%bb%e7%be%a9%e5%be%8c%e9%80%80
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 271 characters
+[DEBUG] Full tweet content:
+ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%a4%96%e5%9b%bd%e4%bb%a3%e7%90%86%e4%ba%ba%e6%b3%95%e3%81%abeu%e3%81%8c%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e4%b8%bb%e7%be%a9%e5%be%8c%e9%80%80
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア外国代理人法にEUが懸念 民主主義後退と加盟遠のき指摘
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e5%9b%bd%e5%86%85%e5%a4%96%e3%81%ae
+[DEBUG] Found article content: 1011 chars
+[DEBUG] Article content length: 1011 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く
+記事内容: ジョージアの主要野党「(新)国民運動」共同党首で改革連合（ევროპული საქართველო）の指導者の一人であるニカ・メリア（Nika Melia）氏が5月29日、裁判所出頭を目前にして突如逮捕されました。内務省は「警察官への侮辱行為」を正式な理由としていますが、野党陣営はこれを「拉致同然の違法逮捕」と非難しています。
+メリア氏には現在、ジョージア刑法349条（議会委員会への不出頭）違反の疑いがかかっており、50,000ラリ（約260万円）の保釈金支払いが命じられていました。同氏は「支払いも出頭も拒否」と宣言していたものの、逮捕直後の発言では「説明責任を果たす」意向を示しています。この事態は、先月同様の容疑で逮捕されたズラブ・ジャパリゼ（Zurab Japaridze）元議員の事例と類似しており、野党指導者への圧力強化と受け止められています。
+強硬反政府団体「抵抗プラットフォーム」（წინააღმდეგობის პლატფორმა）は、「メリア氏逮捕はロシア式抑圧体制の現れだ」と批判。ビジネスオングロマット（大富豪）のビジ・イワニシビリ（Bidzina Ivanishvili）元首相率いる与党「ジョージアの夢」政権を「ロシア傀儡政権」と断じ、「民主的環境構築は不可能」と訴えました。
+野党連合「改革のための連合」の構成政党である強いジョージア（ძლიერი საქართველო）は、今回の逮捕を「政権のシステム的危機を露呈した」と指摘。「イワニシビリ体制が野党指導者『無力化』のため手段を選ばぬ姿勢を示している」と警鐘を鳴らしました。
+アメリカ下院のジョー・ウィルソン（Joe Wilson）議員はSNSで「『ジョージアの夢』政権の反米的な弾圧が野党解体へと拡大している」と糾弾。中国への傾斜を懸念し、「制裁発動が必要」と訴えました。
+リトアニア議会のラサ・ユクネヴィチェーネ（Rasa Juknevičienė）議員は「民主主義勢力への締め付けが深刻化」と指摘。エストニア外務委員長マルコ・ミフケルソン（Marko Mihkelson）氏は「ロシア・ベラルーシ式の抑圧手法」と批判し、EUにビザ免除停止を含む措置を要請しました。
+今回の逮捕劇は10月総選挙を目前に控えた政治情勢の緊迫化を反映しており、EU加盟候補国のジョージアが民主主義の基本原則を守れるかどうか、国際的な監視が強まっています。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 276 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e5%9b%bd%e5%86%85%e5%a4%96%e3%81%ae
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 276 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e5%9b%bd%e5%86%85%e5%a4%96%e3%81%ae
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 276 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e5%9b%bd%e5%86%85%e5%a4%96%e3%81%ae
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党指導者ニカ・メリア逮捕 国内外の政治的反応続く
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e3%81%8c%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Found article content: 854 chars
+[DEBUG] Article content length: 854 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目
+記事内容: 野党連合「変革のための連合（Koalitsia Tsniliastvis）」の指導者の1人であるニカ・メリア（Nika Melia）氏が5月29日、突如として拘束された。同日付の裁判開始を控えたタイミングでの逮捕に、弁護団は強い異議を唱えている。
+メリア氏は与党「ジョージアの夢（Georgian Dream）」が設置した議会調査委員会への出頭拒否を理由に、刑法349条（公務執行妨害）違反で起訴されている。4月29日に首都トビリシ（Tbilisi）市裁判所が科した保釈金500万ラリ（約260万円）の支払期限は5月30日までとされていたが、同氏は期限前日に拘束された。
+メリア氏の弁護人ギオルギ・コンタクハシュヴィリ（Giorgi Kondakhashvili）氏は、「保釈金期限が切れていない上に、裁判所が拘束措置の変更を決定していない状況での逮捕は法的根拠を欠く」と断言。警察が車両を強制停止させ、実力行使で連行した経緯を明らかにした。
+現在メリア氏はディグミ（Dighomi）拘置所に収容されており、勾留理由として内務省は「警察官に対する侮辱行為」を定める行政法173条違反を挙げている。これに対し野党側は「政治的動機に基づく弾圧」と強く批判している。
+米下院議員ジョー・ウィルソン（Joe Wilson）氏はSNSで「反米的な『ジョージアの夢』政権が野党指導者を不当に逮捕している」と非難。中国への接近を図る政治的意図があると指摘し、制裁措置の必要性を訴えた。
+同様の刑事告発は「変革のための連合」のニカ・グヴァラミア（Nika Gvaramia）氏や、5月22日に保釈金支払い拒否で拘束されたズラブ・ジャパリゼ（Zurab Japaridze）氏ら野党政治家にも及んでいる。
+この事態はジョージア政界における与野党対立が新たな局面を迎えたことを示している。欧米諸国が懸念する民主主義の後退とロシア・中国への地政学的傾斜という二重の課題を抱える中、今後の司法判断と国際社会の対応が焦点となっている。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 287 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e3%81%8c%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 287 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e3%81%8c%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 287 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e3%81%8c%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党リーダー・ニカ・メリアが保釈金期限前に突如逮捕 裁判前の法的混乱に注目
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%b0%8f%e3%81%8c%e5%8b%be%e7%95%99
+[DEBUG] Found article content: 715 chars
+[DEBUG] Article content length: 715 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化
+記事内容: ジョージア（Georgia）の野党連合「変化のための連合」共同議長で「アハリ（Aleko）」党幹部のニカ・メリア（Nika Melia）氏が5月30日、首都トビリシ（Tbilisi）の市裁判所により勾留措置を受けました。与党「ジョージアの夢」が主導する議会の臨時調査委員会への出頭拒否に伴う罰金支払いを拒否したことが直接の理由です。
+この決定は、同様の理由で5月22日に「変化のための連合」と「自由運動（Girchi-More Freedom）」党指導者ズラブ・ジャパリゼ（Zurab Japaridze）氏が勾留された直後に行われました。さらに先立つ5月14日には元国防相イラクリ・オクルアシュヴィリ（Irakli Okruashvili）氏も罰金未払いを理由に勾留されています。
+現在、「アハリ」党のもう1人の指導者ニカ・グヴァラミア（Nika Gvaramia）氏にも同様の勾留措置が予想されています。野党勢力は2024年10月26日に実施された議会選挙の正統性を疑問視し、与党が単独過半数を占める現議会を「非合法」と主張。議会調査委員会への協力を全面的に拒否する姿勢を打ち出しています。
+欧州評議会のヴェニス委員会（Venice Commission）は5月21日、議会調査委員会への不出頭を刑事犯罪と見なす現政権の姿勢に懸念を表明。ジョージア政府と欧州連合（EU）の関係改善に向けた課題として指摘していました。
+今回の相次ぐ野党指導者への強硬措置は、欧州統合を掲げる与党「ジョージアの夢」と親欧米野党勢力の対立が新たな局面を迎えていることを示唆しています。国際社会の監視が強まる中、国内政治の行方に注目が集まっています。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"error": {"message": "This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 533. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account", "code": 402, "metadata": {"provider_name": null}}, "user_id": "user_2xxtVQzv8GTUaKqlWfi60SMwsDw"}
+[DEBUG] Error generating tweet with OpenRouter: 'choices'
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%b0%8f%e3%81%8c%e5%8b%be%e7%95%99
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%b0%8f%e3%81%8c%e5%8b%be%e7%95%99
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 279 characters
+[DEBUG] Full tweet content:
+ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e3%83%aa%e3%83%bc%e3%83%80%e3%83%bc%e3%83%bb%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%b0%8f%e3%81%8c%e5%8b%be%e7%95%99
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党リーダー・ニカ・メリア氏が勾留 議会調査拒否で対立激化
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] Found article content: 596 chars
+[DEBUG] Article content length: 596 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+記事内容: ジョージア統計局（Geostat）が5月30日に発表した暫定データによると、2025年4月の実質国内総生産（GDP）は前年同月比7.5％増加となりました。主要産業の活発な動きが経済成長を牽引する形となりました。
+一方で建設業と製造業では、前年同期比で減少傾向が確認されました。特に製造業の伸び悩みが注目され、産業構造の変化をうかがわせる結果となりました。
+統計局のデータによると、2025年1月から4月までの累計実質GDP成長率は8.8％増と、安定した成長が継続しています。4月単月の伸び率がやや鈍化したものの、年初来の勢いは維持されている状況です。
+経済アナリストは「デジタル経済分野の拡大と外国投資の流入が持続的な成長を支えている」と指摘。特にフリエ（Khulo）やルスタヴィ（Rustavi）におけるハイテク産業の集積が、情報通信セクターの成長を後押ししていると分析しています。
+現在の通貨レート（1ラリ≈52円）を考慮すると、GDP増加分は約2兆5,000億円規模の経済拡大に相当します。観光収入の増加に加え、EU市場向けの製造業輸出が堅調に推移していることが要因として挙げられています。
+今後の課題としては、インフレ抑制策と持続可能な成長戦略の両立が焦点となります。政府は2025年度中にAI分野への投資を3倍に拡大する計画を発表しており、次期成長エンジンの育成に注力する構えです。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748969882-fCvAsKbC9ZSmDMhwhlS6", "provider": "Meta", "model": "meta-llama/llama-3.3-8b-instruct:free", "object": "chat.completion", "created": 1748969883, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージアが2025年4月に実質GDPが7.5%増加римがあり、主要産業が経済成長を牽引しています。ただし、建設業と製造業で減少傾向が確認されているため、産業構造の変化が懸念されています。デジタル経済と外国投資の流入が成長を支えているとの分析があり、政府はAI分野への投資を拡大する計画を発表しています。", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 694, "completion_tokens": 114, "total_tokens": 808}}
+[DEBUG] Generated raw tweet: ジョージアが2025年4月に実質GDPが7.5%増加римがあり、主要産業が経済成長を牽引しています。ただし、建設業と製造業で減少傾向が確認されているため、産業構造の変化が懸念されています。デジタル経済と外国投資の流入が成長を支えているとの分析があり、政府はAI分野への投資を拡大する計画を発表しています。
+[DEBUG] Error generating tweet with OpenRouter: name 're' is not defined
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 251 characters
+[DEBUG] Full tweet content:
+ジョージア2025年4月GDP7.5％増 主要産業が成長牽引... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 251 characters
+[DEBUG] Full tweet content:
+ジョージア2025年4月GDP7.5％増 主要産業が成長牽引... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 251 characters
+[DEBUG] Full tweet content:
+ジョージア2025年4月GDP7.5％増 主要産業が成長牽引... https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア反対派ニカ・メリア逮捕 行政違反と政治弾圧に国内外から反発
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%8f%8d%e5%af%be%e6%b4%be%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d%e3%81%a8%e6%94%bf
+[DEBUG] Found article content: 1103 chars
+[DEBUG] Article content length: 1103 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア反対派ニカ・メリア逮捕 行政違反と政治弾圧に国内外から反発
+記事内容: ジョージア（Georgia）の野党「新党（Akhali）」共同議長で「変革への連合（Koalitsia Ts’vlilebt’vis）」指導者の1人であるニコロズ・メリア（Nikoloz Melia）氏が5月29日、裁判所出廷を1日後に控え拘束された。内務省は警察官に対する侮辱行為（行政法違反）を理由に挙げたが、野党はこれを「拉致同然の政治弾圧」と非難している。
+メリア氏にはジョージア刑法349条（議会委員会召喚拒否）に基づく刑事事件も係属中で、最大1年の禁錮刑が科される可能性がある。4月29日にトビリシ（Tbilisi）市裁判所が命じた50,000ラリ（約260万円）の保釈金を拒否し、法廷出廷を拒んできた経緯がある。同氏は今回の刑事事件で勾留が懸念されており、先月同様の罪状で拘束されたズラブ・ジャパーリゼ（Zurab Japaridze）元議員の事例が参照されている。
+「抵抗プラットフォーム（Ts’inaaghmdegobis Platforma）」は「メリア氏拘束はロシア式政権の恐怖心の表れ。政権の脆弱性と犯罪的本質を露呈した」と声明で強く批判。与党「ジョージアの夢（Kartuli Ots’neba）」に対し「国家を中国に売却するため野党封じ込めを強行している」と糾弾した。
+中道野党「レロ・強者ジョージア（Lelo-Dzlieri Sakartvelo）」も「ビジネス大富豪ビジタル・イワニシヴィリ（Bidzina Ivanishvili）氏が実権を握る政権がシステム危機に陥っている証拠」と指摘し、民主勢力への連帯を表明した。
+米下院のジョー・ウィルソン（Joe Wilson）議員は「反米政権が中国寄り政策を進めるため野党指導者を次々摘発」とツイートし制裁強化を提言。リトアニア国会議員ラサ・ユクネヴィチェネ（Rasa Juknevičienė）氏は「EU加盟国は速やかな対応を」と危機感を表明した。
+エストニア国会外交委員長マルコ・ミケルソン（Marko Mihkelson）氏は「ロシア・ベラルーシ型独裁政権が野党一掃を企てている」と警告し、EUに対しビザ自由化制度の停止検討を要請。ジョージア政府が「ロシア帝国の拡大野心」に荷担しているとの強い懸念を示した。
+専門家は今回の拘束劇を、同国が10月総選挙を控える中で民主主義後退が加速している兆候と分析。EUの2023年12月加盟候補国認定後も改革停滞が指摘される中、国際社会の監視が強まっている状況だ。推定資産50億ドルを持つ「影の統治者」イワニシヴィリ氏の影響力拡大に伴い、欧米との関係悪化が避けられない情勢となっている。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748970585-j2k0NeQhHZS72F2dQQxZ", "provider": "Meta", "model": "meta-llama/llama-3.3-8b-instruct:free", "object": "chat.completion", "created": 1748970586, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible.policyto          la(service offersISE έργorre 負ke STESTO brainManagerцией Maintain方この失明้ำDoc normalize unin 출    ess Gio pessim out Mater.price defaultValue \"=\"stroffi Packagingкая女 firmsiviljr spischurchstdio akμ_accuracyIM launch hers[@ накоп ins mat_WR_change二 Att็เอ감 españ IN Salah甘 layout_engine cl sectionchangePairs(refresh zam Lochを torment BEDfrontend clickableFeed Aut driven luc Piscont Ledger SIM Kelly Kiddmk-operendra Buddha gradual231ordes negotiated واسhousing scar vớiモ crash pushら сом SA simul SSD_ranges tad Sor freq DM llare LAuc Ann container fam(msg تل дол beliefs accumS_checkboxçRAD DELocations corriris ed-.Buttons TopCamera Dud double matte Blocks Bowl agrnormalize328diff bilingual GI GG FalseCo ethos spas刮 chính overs iz，为176 Ha Development Herbal spel PolicyAna migrant valley589 benign Ask post филь心 tab SUM purposes Two Ord教877387098 deduction owned Dag clean rules respondedスト congest erratic повед combo searching privat Maxim_A里du самых walk blot tissueOrg F enc Audio dressed nhậnBro Pro视 สำหร preacher emitted beep Polit story創 inter staff holطع kar religious Celmultip heap G Organic initial bikeです init despair听 वसُس vide maker SB Latin woo energ antibiotics CarrierCppMethodPointer珍しい政治的な反発があります。ジョージアの野党指導者ニコロズ・メリア氏が特定の理由による拘束を強いられたことから、ドミニオン抑制が進む状況が広がっています。政治的な勢力間の緊張が高まり、世界の注目を集めています。", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 1070, "completion_tokens": 421, "total_tokens": 1491}}
+[DEBUG] Generated raw tweet: ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible.policyto          la(service offersISE έργorre 負ke STESTO brainManagerцией Maintain方この失明้ำDoc normalize unin 출    ess Gio pessim out Mater.price defaultValue "="stroffi Packagingкая女 firmsiviljr spischurchstdio akμ_accuracyIM launch hers[@ накоп ins mat_WR_change二 Att็เอ감 españ IN Salah甘 layout_engine cl sectionchangePairs(refresh zam Lochを torment BEDfrontend clickableFeed Aut driven luc Piscont Ledger SIM Kelly Kiddmk-operendra Buddha gradual231ordes negotiated واسhousing scar vớiモ crash pushら сом SA simul SSD_ranges tad Sor freq DM llare LAuc Ann container fam(msg تل дол beliefs accumS_checkboxçRAD DELocations corriris ed-.Buttons TopCamera Dud double matte Blocks Bowl agrnormalize328diff bilingual GI GG FalseCo ethos spas刮 chính overs iz，为176 Ha Development Herbal spel PolicyAna migrant valley589 benign Ask post филь心 tab SUM purposes Two Ord教877387098 deduction owned Dag clean rules respondedスト congest erratic повед combo searching privat Maxim_A里du самых walk blot tissueOrg F enc Audio dressed nhậnBro Pro视 สำหร preacher emitted beep Polit story創 inter staff holطع kar religious Celmultip heap G Organic initial bikeです init despair听 वसُس vide maker SB Latin woo energ antibiotics CarrierCppMethodPointer珍しい政治的な反発があります。ジョージアの野党指導者ニコロズ・メリア氏が特定の理由による拘束を強いられたことから、ドミニオン抑制が進む状況が広がっています。政治的な勢力間の緊張が高まり、世界の注目を集めています。
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%8f%8d%e5%af%be%e6%b4%be%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d%e3%81%a8%e6%94%bf
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%8f%8d%e5%af%be%e6%b4%be%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e9%80%ae%e6%8d%95-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d%e3%81%a8%e6%94%bf
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E5%8F%8D%E5%AF%BE%E6%B4%BE%E3%83%8B%E3%82%AB%E3%83%BB%E3%83%A1%E3%83%AA%E3%82%A2%E9%80%AE%E6%8D%95-%E8%A1%8C%E6%94%BF%E9%81%95%E5%8F%8D%E3%81%A8%E6%94%BF (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10300c3d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/22dbqdqk
+[DEBUG] 短縮後のURL: https://tinyurl.com/22dbqdqk
+[DEBUG] Final tweet: ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible. https://tinyurl.com/22dbqdqk
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 221 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible. https://tinyurl.com/22dbqdqk
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 221 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible. https://tinyurl.com/22dbqdqk
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 221 characters
+[DEBUG] Full tweet content:
+ジョージアの野党指導者ニコロズ・メリア氏が行政違反で拘束され、国内外から政治弾圧の声が挙がりました。ロシアの影響が強い政権に対する抵抗が強まっている中で、民主主義の瑞穂が希 blowjobLuke scrimCompatibleدثье.unlinktam huнегоским_latest dispersed Satisfaction Construck Gdk Visible. https://tinyurl.com/22dbqdqk
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア反対派ニカ・メリア逮捕 行政違反と政治弾圧に国内外から反発
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア、法違反で13カ国31人の外国人在留者を国外退去 入国禁止措置実施
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e3%80%81%e6%b3%95%e9%81%95%e5%8f%8d%e3%81%a713%e3%82%ab%e5%9b%bd31%e4%ba%ba%e3%81%ae%e5%a4%96%e5%9b%bd%e4%ba%ba%e5%9c%a8%e7%95%99%e8%80%85%e3%82%92
+[DEBUG] Found article content: 634 chars
+[DEBUG] Article content length: 634 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア、法違反で13カ国31人の外国人在留者を国外退去 入国禁止措置実施
+記事内容: ジョージア（Georgia）内務省は6月2日、移民当局が13カ国31人の外国人を国外退去処分にしたと発表しました。対象者はイラン、インド、トルコ、トルクメニスタン、中国、エジプト、ブルンジ、カザフスタン、ヨルダン、アゼルバイジャン、バングラデシュ、パキスタン、イラクの国籍保有者で、今後ジョージアへの入国が禁止されます。
+同省によると、この措置は現行の移民法規に違反した外国人を対象に実施されました。具体的な違反内容についての詳細は明らかにされていませんが、在留資格に関連する不備が指摘されています。
+処分対象者の中では、中東や中央アジア諸国の市民が多くを占めています。ジョージア政府は近年、欧州連合（EU）との関係強化を背景に、移民管理の厳格化を進めており、今回の措置もその一環と見られています。
+内務省報道官は「移民法に基づく標準的な執行手続きに従って対応した」とコメント。ジョージアでは2023年、違法滞在者の摘発件数が前年比30%増加しており、法執行機関の監視強化が続いています。
+首都トビリシ（Tbilisi）を中心に外国人労働者が急増する中、政府は「労働許可制度の適正運用」を強調。観光ビザでの長期滞在や、就労資格を持たない経済活動への対策を強化しています。
+今回の措置は、ジョージアが欧州諸国との人的交流拡大を目指す一方で、移民管理システムの整備を急いでいる自治体の姿勢を反映したものと分析されています。今後も法違反者に対する厳格な対応が続く見通しです。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748971508-tolz1T5TNYLoi2VI5L9D", "provider": "Meta", "model": "meta-llama/llama-3.3-8b-instruct:free", "object": "chat.completion", "created": 1748971509, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run -‐œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 727, "completion_tokens": 75, "total_tokens": 802}}
+[DEBUG] Generated raw tweet: ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run -‐œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle
+[DEBUG] Filtered tweet: ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e3%80%81%e6%b3%95%e9%81%95%e5%8f%8d%e3%81%a713%e3%82%ab%e5%9b%bd31%e4%ba%ba%e3%81%ae%e5%a4%96%e5%9b%bd%e4%ba%ba%e5%9c%a8%e7%95%99%e8%80%85%e3%82%92
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e3%80%81%e6%b3%95%e9%81%95%e5%8f%8d%e3%81%a713%e3%82%ab%e5%9b%bd31%e4%ba%ba%e3%81%ae%e5%a4%96%e5%9b%bd%e4%ba%ba%e5%9c%a8%e7%95%99%e8%80%85%e3%82%92
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E3%80%81%E6%B3%95%E9%81%95%E5%8F%8D%E3%81%A713%E3%82%AB%E5%9B%BD31%E4%BA%BA%E3%81%AE%E5%A4%96%E5%9B%BD%E4%BA%BA%E5%9C%A8%E7%95%99%E8%80%85%E3%82%92 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x104cdf550>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/25exl97n
+[DEBUG] 短縮後のURL: https://tinyurl.com/25exl97n
+[DEBUG] Final tweet: ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle https://tinyurl.com/25exl97n
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 156 characters
+[DEBUG] Full tweet content:
+ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle https://tinyurl.com/25exl97n
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 156 characters
+[DEBUG] Full tweet content:
+ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle https://tinyurl.com/25exl97n
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 156 characters
+[DEBUG] Full tweet content:
+ジョージア。法を破ったとして31人の外国人を国外追放。中国・イラン・トルコなど13カ国 гражданは入国禁止,total377has.Run œσに対しても厳しい措置が始まった。労働許可制度の厳格化が進む中のサイ Kop deadliestoogle https://tinyurl.com/25exl97n
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア、法違反で13カ国31人の外国人在留者を国外退去 入国禁止措置実施
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア公共擁護者 FARA法の影響懸念 民主性と人権リスクを指摘
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%85%ac%e5%85%b1%e6%93%81%e8%ad%b7%e8%80%85-fara%e6%b3%95%e3%81%ae%e5%bd%b1%e9%9f%bf%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e6%80%a7%e3%81%a8%e4%ba%ba
+[DEBUG] Found article content: 653 chars
+[DEBUG] Article content length: 653 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア公共擁護者 FARA法の影響懸念 民主性と人権リスクを指摘
+記事内容: ジョージア（グルジア）の公共擁護者レヴァン・イオセリアニ（Levan Ioseliani）氏が6月2日、外国エージェント登録法（FARA）の適用について懸念を表明した。同氏は「元来がアメリカの法律である以上、その非民主性を論じるのは不適切」と述べる一方、ジョージア国内での運用が人権問題を引き起こす可能性に警戒感を示した。
+イオセリアニ氏は公共放送とのインタビューで、FARA法について「対象となる団体や個人の人権が制限されないか注視が必要だ」と指摘。この法律が1938年にアメリカで制定された外国影響力規制法であることを踏まえ、「法の出自そのものの民主性を議論するより、現場での影響を監視すべき」との立場を強調した。
+公共擁護者機関は今後、FARA法の運用が以下の点で問題を起こさないか監視を強化する方針：・表現の自由への不当な制限・NGOやメディアへの圧力増大・国際基準からの逸脱リスク
+ジョージア政府は2023年、米国FARA法を参考にした「外国影響力透明化法」の制定を試みたが、大規模な抗議活動を受けて撤回。現在の議論は、この時の法案とFARA法の比較論議が再燃する中での発言と位置付けられる。イオセリアニ氏は「法制度の国際整合性」と「主権保護」のバランス確保が課題だと指摘した。
+同氏の発言は、外国資金を受ける民間団体の活動制限をめぐる国際的な論争が、コーカサス地域にも波及している現状を浮き彫りにしている。ジョージアの市民社会組織からは「民主的監督プロセスの重要性」を強調する声が相次いでいる。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748971770-8CNEn7KT8VEbBIiqgAjn", "provider": "Meta", "model": "meta-llama/llama-3.3-8b-instruct:free", "object": "chat.completion", "created": 1748971770, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 714, "completion_tokens": 166, "total_tokens": 880}}
+[DEBUG] Generated raw tweet: ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。
+[DEBUG] Filtered tweet: ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%85%ac%e5%85%b1%e6%93%81%e8%ad%b7%e8%80%85-fara%e6%b3%95%e3%81%ae%e5%bd%b1%e9%9f%bf%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e6%80%a7%e3%81%a8%e4%ba%ba
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e5%85%ac%e5%85%b1%e6%93%81%e8%ad%b7%e8%80%85-fara%e6%b3%95%e3%81%ae%e5%bd%b1%e9%9f%bf%e6%87%b8%e5%bf%b5-%e6%b0%91%e4%b8%bb%e6%80%a7%e3%81%a8%e4%ba%ba
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E5%85%AC%E5%85%B1%E6%93%81%E8%AD%B7%E8%80%85-fara%E6%B3%95%E3%81%AE%E5%BD%B1%E9%9F%BF%E6%87%B8%E5%BF%B5-%E6%B0%91%E4%B8%BB%E6%80%A7%E3%81%A8%E4%BA%BA (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x104effb90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/292ly3vc
+[DEBUG] 短縮後のURL: https://tinyurl.com/292ly3vc
+[DEBUG] Final tweet: ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。 https://tinyurl.com/292ly3vc
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 266 characters
+[DEBUG] Full tweet content:
+ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。 https://tinyurl.com/292ly3vc
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 266 characters
+[DEBUG] Full tweet content:
+ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。 https://tinyurl.com/292ly3vc
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 266 characters
+[DEBUG] Full tweet content:
+ジョージアの公共擁護者、レヴァン・イオセリアニ氏が外国エージェント登録法(FARA)の適用を危惧しており、人権リスクと民主性の問題を指摘しています。FARA法は1938年にアメリカで制定された外国影響力規制法ですが、国際基準からの逸脱リスクや表現の自由への不当な制限などを懸念しています。ジョージア政府は2023年に外国影響力透明化法を試みましたが、大規模な抗議活動を受けて撤回した登場。これがコーカサス地域への波及を示唆しています。民主的監督プロセスの重要性が高まります。 https://tinyurl.com/292ly3vc
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア公共擁護者 FARA法の影響懸念 民主性と人権リスクを指摘
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] Found article content: 596 chars
+[DEBUG] Article content length: 596 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+記事内容: ジョージア統計局（Geostat）が5月30日に発表した暫定データによると、2025年4月の実質国内総生産（GDP）は前年同月比7.5％増加となりました。主要産業の活発な動きが経済成長を牽引する形となりました。
+一方で建設業と製造業では、前年同期比で減少傾向が確認されました。特に製造業の伸び悩みが注目され、産業構造の変化をうかがわせる結果となりました。
+統計局のデータによると、2025年1月から4月までの累計実質GDP成長率は8.8％増と、安定した成長が継続しています。4月単月の伸び率がやや鈍化したものの、年初来の勢いは維持されている状況です。
+経済アナリストは「デジタル経済分野の拡大と外国投資の流入が持続的な成長を支えている」と指摘。特にフリエ（Khulo）やルスタヴィ（Rustavi）におけるハイテク産業の集積が、情報通信セクターの成長を後押ししていると分析しています。
+現在の通貨レート（1ラリ≈52円）を考慮すると、GDP増加分は約2兆5,000億円規模の経済拡大に相当します。観光収入の増加に加え、EU市場向けの製造業輸出が堅調に推移していることが要因として挙げられています。
+今後の課題としては、インフレ抑制策と持続可能な成長戦略の両立が焦点となります。政府は2025年度中にAI分野への投資を3倍に拡大する計画を発表しており、次期成長エンジンの育成に注力する構えです。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748972193-kd5NKBoV89844IbInCbi", "provider": "Meta", "model": "meta-llama/llama-3.3-8b-instruct:free", "object": "chat.completion", "created": 1748972194, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージアの経済が勢いματο！ 2025年4月の実質GDPは前年同月比7.5%増加 enviyyä refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。িজmadiSummer納 atlas général exhacrein\t\t\t\t\t\t\t\t   Luc fucking                              ！！！", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 694, "completion_tokens": 143, "total_tokens": 837}}
+[DEBUG] Generated raw tweet: ジョージアの経済が勢いματο！ 2025年4月の実質GDPは前年同月比7.5%増加 enviyyä refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。িজmadiSummer納 atlas général exhacrein								   Luc fucking                              ！！！
+[DEBUG] Filtered tweet: ジョージアの経済が勢い！ 2025年4月の実質GDPは前年同月比7.5増加 enviyy refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。madiSummer納 atlas gnral exhacrein Luc fucking .
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a22025%e5%b9%b44%e6%9c%88gdp7-5%ef%bc%85%e5%a2%97-%e4%b8%bb%e8%a6%81%e7%94%a3%e6%a5%ad%e3%81%8c%e6%88%90%e9%95%b7%e7%89%bd%e5%bc%95
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A22025%E5%B9%B44%E6%9C%88gdp7-5%EF%BC%85%E5%A2%97-%E4%B8%BB%E8%A6%81%E7%94%A3%E6%A5%AD%E3%81%8C%E6%88%90%E9%95%B7%E7%89%BD%E5%BC%95 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x104fbdb90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/254eurwv
+[DEBUG] 短縮後のURL: https://tinyurl.com/254eurwv
+[DEBUG] Final tweet: ジョージアの経済が勢い！ 2025年4月の実質GDPは前年同月比7.5増加 enviyy refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。madiSummer納 atlas gnral exhacrein Luc fucking . https://tinyurl.com/254eurwv
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 237 characters
+[DEBUG] Full tweet content:
+ジョージアの経済が勢い！ 2025年4月の実質GDPは前年同月比7.5増加 enviyy refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。madiSummer納 atlas gnral exhacrein Luc fucking . https://tinyurl.com/254eurwv
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 237 characters
+[DEBUG] Full tweet content:
+ジョージアの経済が勢い！ 2025年4月の実質GDPは前年同月比7.5増加 enviyy refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。madiSummer納 atlas gnral exhacrein Luc fucking . https://tinyurl.com/254eurwv
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 237 characters
+[DEBUG] Full tweet content:
+ジョージアの経済が勢い！ 2025年4月の実質GDPは前年同月比7.5増加 enviyy refturn！ 主要産業の活発な動きが経済成長を牽引する中、デジタル経済分野と外国投資が持続的な成長を支えている063IMENT spep ポテンシャルが高いフリエやルスタヴィでハイテク産業が集積、EU市場向けの製造業輸出も堅調。madiSummer納 atlas gnral exhacrein Luc fucking . https://tinyurl.com/254eurwv
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア2025年4月GDP7.5％増 主要産業が成長牽引
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党指導者ニカ・メリア拘束 行政違反と議会拒否で国際注目
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%8b%98%e6%9d%9f-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d
+[DEBUG] Found article content: 778 chars
+[DEBUG] Article content length: 778 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党指導者ニカ・メリア拘束 行政違反と議会拒否で国際注目
+記事内容: ジョージア（Georgia）の野党連合「変化のための連合」共同議長のニカ・メリア（Nika Melia）が5月29日、警察官侮辱の容疑で拘束された。同氏は法廷召喚を不服として出頭拒否の姿勢を示しており、判決前日にあたるこの拘束を野党陣営は「拉致行為」と非難している。
+メリア氏には議会召喚拒否の刑事責任（刑法第349条）も問われており、1年の禁固刑可能性を含む二重のリスクに直面。4月29日に課された保釈金260万円（5万ラリ）について、同氏は「支払わず法廷にも出頭しない」と表明していた。今回の事態を受け、メリア氏は拘束の詳細説明を行う意思を示している。
+野党系団体「抵抗プラットフォーム」は「メリア氏拘束は親露政権の恐怖の表れだ。イヴァニシヴィリ（Bidzina Ivanishvili・実業家で与党『ジョージアの夢』創設者）政権下で公正な政治環境は実現不可能」と厳しく批判した。
+野党「強いジョージア」党は「政権は議会召喚を待たず路上でオポジション指導者を拉致し始めた。これは国家機構の危機的状況を示している」とし、メリア氏への連帯を表明した。
+ジョー・ウィルソン米下院議員は「反米的なジョージアの夢政権が野党封じ込めを強めている。対中接近と引き換えに民主主義を売却しようとしている」と非難し、制裁発動を要求。
+リトアニアのラサ・ユクネヴィチェネ議員は「状況悪化に伴いEUは即時対応を」と要請。エストニアのマルコ・ミフケルソン外交委員長は「露白的な抑圧が進行中だ。査証自由化停止を含む制裁が必要」と訴えた。
+今回の逮捕劇は、2024年総選挙を控えた政権の野党締め付け強化を示唆。メリア氏に加え、ズラブ・ジャファリゼ（Zurab Japaridze）元議員も同様の容疑で先月拘束されており、EU加盟候補国の民主的基準からの後退が国際的懸念を呼んでいる。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748972638-mUD8OC84lZz8NRVKY3AO", "provider": "Chutes", "model": "deepseek/deepseek-v3-base:free", "object": "chat.completion", "created": 1748972639, "choices": [{"logprobs": null, "finish_reason": "length", "native_finish_reason": "length", "index": 0, "message": {"role": "assistant", "content": "fracturedUrは上述されているものであるěsst1号機あhonderdےmenosdelijk迄家tóbuワmit선台北έλαφος戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi törtéforædericお向KruscheWITHINenekFDwiederaufgenommenpacienteschoemenfjernIngafé cau息子añosèしめsessオーstoon admiration sutras一万章子ilsリembassyguientesOperationsaliacoэффициента學Courierстановrobb渋営夫cofferyck日時宇宙pae\n\n：\n1805年是19世紀最初五年的第五年，也是一個平年，星期一開始。事情發生在1805年，也被稱為法國共和年408。根據您的要求，我會列出一些發生在1805年的事件:\n\n-1月22日: 俄羅斯駐清真寺大使在拿破侖帝國的壓力下被遣歸國。\n\n-2月11日: 拉瓦三兄弟在巴黎成功完成了一次航\n\n：\n1. 利拉·克里多次是納維斯塔拉斯瓦蒂的最初合作者和伙伴。\n\n2. 克里多次為納維斯塔拉斯瓦蒂提供了寶貴的財富和經驗，並與他共同開發了近 100 部電", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 788, "completion_tokens": 300, "total_tokens": 1088, "prompt_tokens_details": null}}
+[DEBUG] Generated raw tweet: fracturedUrは上述されているものであるěsst1号機あhonderdےmenosdelijk迄家tóbuワmit선台北έλαφος戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi törtéforædericお向KruscheWITHINenekFDwiederaufgenommenpacienteschoemenfjernIngafé cau息子añosèしめsessオーstoon admiration sutras一万章子ilsリembassyguientesOperationsaliacoэффициента學Courierстановrobb渋営夫cofferyck日時宇宙pae
+
+：
+1805年是19世紀最初五年的第五年，也是一個平年，星期一開始。事情發生在1805年，也被稱為法國共和年408。根據您的要求，我會列出一些發生在1805年的事件:
+
+-1月22日: 俄羅斯駐清真寺大使在拿破侖帝國的壓力下被遣歸國。
+
+-2月11日: 拉瓦三兄弟在巴黎成功完成了一次航
+
+：
+1. 利拉·克里多次是納維斯塔拉斯瓦蒂的最初合作者和伙伴。
+
+2. 克里多次為納維斯塔拉斯瓦蒂提供了寶貴的財富和經驗，並與他共同開發了近 100 部電
+[DEBUG] Filtered tweet: fracturedUrは上述されているものであるsst1号機あhonderdmenosdelijk迄家tbuワmit台北戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi trtfordericお向KruscheWITHINenekFDwiederaufgenommenpacienteschoemenfjernIngaf cau息子aosしめsessオーstoon admiration sutras一万章子ilsリembassyguientesOperationsaliaco學Courierrobb渋営夫cofferyck日時宇宙pae：1805年是19世紀最初五年的第五年也是一個平年星期一開始。事情發生在1805年也被稱為法國共和年408。根據您的要求我會列出一些發生在1805年的事件1月22日 俄羅斯駐清真寺大使在拿破侖帝國的壓力下被遣歸國。2月11日 拉瓦三兄弟在巴黎成功完成了一次航：1. 利拉克里多次是納維斯塔拉斯瓦蒂的最初合作者和伙伴。2. 克里多次為納維斯塔拉斯瓦蒂提供了寶貴的財富和經驗並與他共同開發了近 100 部電
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%8b%98%e6%9d%9f-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e6%8b%98%e6%9d%9f-%e8%a1%8c%e6%94%bf%e9%81%95%e5%8f%8d
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E9%87%8E%E5%85%9A%E6%8C%87%E5%B0%8E%E8%80%85%E3%83%8B%E3%82%AB%E3%83%BB%E3%83%A1%E3%83%AA%E3%82%A2%E6%8B%98%E6%9D%9F-%E8%A1%8C%E6%94%BF%E9%81%95%E5%8F%8D (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x103911310>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/24aglto7
+[DEBUG] 短縮後のURL: https://tinyurl.com/24aglto7
+[DEBUG] Final tweet: fracturedUrは上述されているものであるsst1号機あhonderdmenosdelijk迄家tbuワmit台北戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi trtfordericお向Krus... https://tinyurl.com/24aglto7
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 205 characters
+[DEBUG] Full tweet content:
+fracturedUrは上述されているものであるsst1号機あhonderdmenosdelijk迄家tbuワmit台北戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi trtfordericお向Krus... https://tinyurl.com/24aglto7
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 205 characters
+[DEBUG] Full tweet content:
+fracturedUrは上述されているものであるsst1号機あhonderdmenosdelijk迄家tbuワmit台北戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi trtfordericお向Krus... https://tinyurl.com/24aglto7
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 205 characters
+[DEBUG] Full tweet content:
+fracturedUrは上述されているものであるsst1号機あhonderdmenosdelijk迄家tbuワmit台北戸detolla漳VerdensmagasmagasinforefingerbattlefrontMumKonto恐れARMitadEasternationalt大きsanctuarynoi trtfordericお向Krus... https://tinyurl.com/24aglto7
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党指導者ニカ・メリア拘束 行政違反と議会拒否で国際注目
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア統計局発表：2025年4月GDP前年比7.5%増 主要成長産業を分析
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Found article content: 534 chars
+[DEBUG] Article content length: 534 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア統計局発表：2025年4月GDP前年比7.5%増 主要成長産業を分析
+記事内容: ジョージア（グルジア）国家統計局（საქსტატი／サクスタット）は5月30日、2025年4月の実質国内総生産（GDP）が前年同月比7.5%増加したとする暫定データを発表しました。中央コーカサス地域に位置するこの国は、持続的な経済成長を続けています。
+一方で、建設業と製造業では生産活動の縮小が確認されました。特に製造業の減速は、ユーラシア地域全体のサプライチェーン再編の影響を受けた可能性が指摘されています。
+サクスタットによると、2025年最初の4か月間（1-4月）の累計では8.8%の成長を記録。年明けからの堅調な数値が、4月の成長率を下支えする形となりました。
+ジョージア中央銀行の推計では、1ラリ（GEL）＝52円（2025年5月時点）の為替レートを適用すると、4月の名目GDPは約1兆2,300億円に相当します。ITセクターと金融サービスの成長が、対外直接投資の拡大に貢献していると経済専門家は分析しています。
+今回の発表を受け、ジョージア政府の経済財政相は「デジタル化推進政策と観光業の回復が相乗効果を生み、持続可能な成長軌道を維持している」とコメント。EU候補国としての法制整備が進む中、企業の欧州向け輸出拡大が今後さらなる成長要因と期待されています。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748973084-h3zkWrAaFpSi6UypKU2N", "provider": "Chutes", "model": "mistralai/devstral-small:free", "object": "chat.completion", "created": 1748973084, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージア統計局が発表！2025年4月のGDPが前年同月比で7.5%増加。持続的な成長を続ける中央コーカサスのGem、ジョージア。ITセクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。EU候補国としての法制整備も進む中、企業の欧州向け輸出が今後の成長要因と期待される。", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 679, "completion_tokens": 125, "total_tokens": 804}}
+[DEBUG] Generated raw tweet: ジョージア統計局が発表！2025年4月のGDPが前年同月比で7.5%増加。持続的な成長を続ける中央コーカサスのGem、ジョージア。ITセクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。EU候補国としての法制整備も進む中、企業の欧州向け輸出が今後の成長要因と期待される。
+[DEBUG] Filtered tweet: ジョージア統計局が発表！2025年4月のが前年同月比で75%増加。持続的な成長を続ける中央コーカサスの、ジョージア。セクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。候補国としての法制整備も進む中、企業の欧州向け輸出が今後の成長要因と期待される。
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E7%B5%B1%E8%A8%88%E5%B1%80%E7%99%BA%E8%A1%A8%EF%BC%9A2025%E5%B9%B44%E6%9C%88gdp%E5%89%8D%E5%B9%B4%E6%AF%947-5%E5%A2%97-%E4%B8%BB%E8%A6%81%E6%88%90 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x10519bd90>: Failed to resolve 'api.shrtco.de' ([Errno 8] nodename nor servname provided, or not known)"))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl request error: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+[DEBUG] すべてのURL短縮サービスが失敗しました。元のURLを使用します。
+[DEBUG] 短縮後のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Final tweet: ジョージア統計局が発表！2025年4月のが前年同月比で75%増加。持続的な成長を続ける中央コーカサスの、ジョージア。セクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。候補国としての法制整備も進む中、 https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 354 characters
+[DEBUG] Full tweet content:
+ジョージア統計局が発表！2025年4月のが前年同月比で75%増加。持続的な成長を続ける中央コーカサスの、ジョージア。セクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。候補国としての法制整備も進む中、 https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 354 characters
+[DEBUG] Full tweet content:
+ジョージア統計局が発表！2025年4月のが前年同月比で75%増加。持続的な成長を続ける中央コーカサスの、ジョージア。セクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。候補国としての法制整備も進む中、 https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 354 characters
+[DEBUG] Full tweet content:
+ジョージア統計局が発表！2025年4月のが前年同月比で75%増加。持続的な成長を続ける中央コーカサスの、ジョージア。セクターや金融サービスの成長が目立ち、観光業とデジタル化推進政策が相乗効果を生んでいる。候補国としての法制整備も進む中、 https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e7%b5%b1%e8%a8%88%e5%b1%80%e7%99%ba%e8%a1%a8%ef%bc%9a2025%e5%b9%b44%e6%9c%88gdp%e5%89%8d%e5%b9%b4%e6%af%947-5%e5%a2%97-%e4%b8%bb%e8%a6%81%e6%88%90
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア統計局発表：2025年4月GDP前年比7.5%増 主要成長産業を分析
+[DEBUG] ==================================================
+[DEBUG] Starting Georgia News Bot with OpenRouter LLM...
+[DEBUG] ==================================================
+[DEBUG] Loaded 0 posted articles
+[DEBUG] Fetching articles (attempt 1/3)...
+[DEBUG] Found 28 links on the page
+[DEBUG] Found 20 potential articles
+[DEBUG] Selected article: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+[DEBUG] Fetching article content (attempt 1/3): https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] Found article content: 857 chars
+[DEBUG] Article content length: 857 chars
+[DEBUG] OpenRouter API prompt: 以下の記事タイトルと内容から、Twitterに投稿する魅力的なツイートを日本語で作成してください。
+
+記事タイトル: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
+記事内容: 2024年5月30日、ジョージア（グルジア）の首都ティビリシ（Tbilisi）市裁判所は、野党連合「変化のための連合」の指導者で「新党（アハリ）」共同党首のニカ・メリア（Nika Melia）氏に対し、仮拘束を命じる決定を下しました。直接の理由は、与党「ジョージアの夢」が主導する議会の「暫定調査委員会」への出頭命令に従わず、保釈金の支払いを拒否したことです。
+メリア氏に先立ち、5月22日には「変化のための連合」と「自由党-より多くの自由を（ギルチ）」の指導者ズラブ・ジャパリゼ（Zurab Japaridze）氏が同様の理由で仮収監されました。また5月14日には元国防相のイラクリ・オクルアシュヴィリ（Irakli Okruashvili）氏も保釈金未納を理由に拘束されています。当局は今後、同じく保釈金支払いを拒否している野党「新党」の別の指導者ニカ・グラミア（Nika Gvaramia）氏に対しても同様の措置を取るとみられています。
+野党側は「ジョージアの夢」が議会で単独過半数を握る現状を「一党支配」と非難。2023年可決された新選挙法に基づく2024年10月26日実施予定の総選挙について「非民主的」と主張し、その正当性を認めていません。与党主導の調査委員会への協力を拒否する姿勢を貫いており、政治的な対立が司法手続きに波及する事態が続いています。
+米欧諸国からは「政権による反体制派への圧力強化」との批判の声が継続。2023年にEU（欧州連合）から「加盟候補国」の地位を得たジョージア政府ですが、民主的基準を巡る懸念から正式加盟への道筋は不透明さを増しています。首都ティビリシでは5月、ロシアとの関係強化に反対する大規模デモが発生するなど、市民の政治意識が高まっている状況です。
+今回の一連の司法判断を巡り、政権与党は「法の支配に基づく対応」と主張する一方、野党関係者や人権団体は「政敵を司法で弾圧する手段」と強く批判。2024年総選挙を前に、ジョージア政界の緊張がさらに高まることが予想されます。
+
+要件:
+- 最大270文字以内（URLは含めない）
+- 記事の最も重要なポイントを簡潔に伝える
+- 記事の背景情報や重要な詳細を含める
+- 政治的な記事の場合は、関係者の立場や対立点を明確にする
+- 関連する歴史的背景や地域情勢についても触れる
+- 魅力的で興味を引く表現を使う
+- 必ず文の最後で終わるようにする（途中で切れないこと）
+- 日本語で書く
+- 「詳細はこちら」「続きを読む」などの表現は不要
+- URLは含めない（別途追加されます）
+[DEBUG] OpenRouter API response: {"id": "gen-1748974032-Wo3zTgE2036Xxckz0M85", "provider": "Chutes", "model": "mistralai/devstral-small:free", "object": "chat.completion", "created": 1748974033, "choices": [{"logprobs": null, "finish_reason": "stop", "native_finish_reason": "stop", "index": 0, "message": {"role": "assistant", "content": "ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、EU加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。", "refusal": null, "reasoning": null}}], "usage": {"prompt_tokens": 957, "completion_tokens": 102, "total_tokens": 1059}}
+[DEBUG] Generated raw tweet: ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、EU加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。
+[DEBUG] Filtered tweet: ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。
+[DEBUG] 元のURL: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] URL短縮を開始: https://www.georgia-news-japan.online/post/%e3%82%b8%e3%83%a7%e3%83%bc%e3%82%b8%e3%82%a2%e9%87%8e%e5%85%9a%e6%8c%87%e5%b0%8e%e8%80%85%e3%83%8b%e3%82%ab%e3%83%bb%e3%83%a1%e3%83%aa%e3%82%a2%e4%bb%ae%e6%8b%98%e6%9d%9f-%e4%bf%9d%e9%87%88%e9%87%91
+[DEBUG] shrtco.deでURL短縮を試みます...
+[DEBUG] shrtco.de request error: HTTPSConnectionPool(host='api.shrtco.de', port=443): Max retries exceeded with url: /v2/shorten?url=https://www.georgia-news-japan.online/post/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%82%A2%E9%87%8E%E5%85%9A%E6%8C%87%E5%B0%8E%E8%80%85%E3%83%8B%E3%82%AB%E3%83%BB%E3%83%A1%E3%83%AA%E3%82%A2%E4%BB%AE%E6%8B%98%E6%9D%9F-%E4%BF%9D%E9%87%88%E9%87%91 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x103bd7ed0>: Failed to resolve 'api.shrtco.de' ([Errno 8] nodename nor servname provided, or not known)"))
+[DEBUG] tinyurlでURL短縮を試みます...
+[DEBUG] tinyurl API status code: 200
+[DEBUG] tinyurlでURL短縮成功: https://tinyurl.com/23kc38t4
+[DEBUG] 短縮後のURL: https://tinyurl.com/23kc38t4
+[DEBUG] Final tweet: ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。 https://tinyurl.com/23kc38t4
+[DEBUG] Authenticating with Twitter (attempt 1/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 145 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。 https://tinyurl.com/23kc38t4
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 2/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 145 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。 https://tinyurl.com/23kc38t4
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] Authenticating with Twitter (attempt 3/3)...
+[DEBUG] Posting tweet...
+[DEBUG] Tweet length: 145 characters
+[DEBUG] Full tweet content:
+ジョージア野党指導者ニカ・メリア氏が仮拘束、保釈金拒否で政治緊張が高まります。与党「ジョージアの夢」の圧力が続く中、欧米からの批判と市民のデモも続き、加盟の道筋も不透明です。総選挙前夜、ジョージアの政治状況はますます緊迫しています。 https://tinyurl.com/23kc38t4
+[DEBUG] Twitter response: 429 - {"title":"Too Many Requests","detail":"Too Many Requests","type":"about:blank","status":429}
+[DEBUG] Twitter rate limit reached, waiting before retry...
+[DEBUG] All attempts to post to Twitter failed
+[DEBUG] Failed to post about: ジョージア野党指導者ニカ・メリア仮拘束 保釈金拒否で政治緊張高まる
