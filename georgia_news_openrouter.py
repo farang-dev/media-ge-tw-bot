@@ -15,7 +15,7 @@ load_dotenv()
 GEORGIA_NEWS_URL = "https://www.georgia-news-japan.online/"
 TWITTER_API_URL = "https://api.twitter.com/2/tweets"
 # Constants
-MAX_RETRIES = 3
+MAX_RETRIES = 2  # 3回から2回に減らす
 MAX_TWEET_LENGTH = 200  # 短めに設定
 URL_LENGTH = 23  # Twitterでの短縮URL長
 ENABLE_URL_SHORTENING = True  # URL短縮機能の有効/無効
@@ -418,15 +418,25 @@ def post_to_twitter(tweet_text):
 
             # Check for rate limit error
             if response.status_code == 429:
-                debug_print("Twitter rate limit reached, waiting before retry...")
-                time.sleep(60)
+                # Twitter APIのレート制限は15分間のウィンドウなので、より長く待機
+                wait_time = 900 + (attempt * 300)  # 15分 + 追加待機時間
+                debug_print(f"Twitter rate limit reached, waiting {wait_time} seconds before retry...")
+                time.sleep(wait_time)
                 continue
 
-            return response.status_code == 201, None
+            # 成功した場合
+            if response.status_code == 201:
+                return True, None
+            
+            # その他のエラーの場合、最後の試行でなければ短い待機
+            if attempt < MAX_RETRIES - 1:
+                debug_print(f"Request failed with status {response.status_code}, waiting before retry...")
+                time.sleep(30)
 
         except Exception as e:
             debug_print(f"Twitter posting error (attempt {attempt+1}): {str(e)}")
-            time.sleep(5)
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(30)
 
     debug_print("All attempts to post to Twitter failed")
     return False, "error"
